@@ -1,4 +1,8 @@
 package armor;
+import config.ConfigLoader;
+import org.json.simple.parser.ParseException;
+
+import java.io.IOException;
 
 /**
  *  foot's armor class
@@ -19,7 +23,7 @@ public class FootArmor extends Armor {
      *
      * @return foot's armor
      */
-    public static FootArmor create() {
-        return new FootArmor( 76.3, 8.2);
+    public static FootArmor create() throws IOException, ParseException {
+        return new FootArmor( ConfigLoader.getDurability("foot"), ConfigLoader.getK("foot"));
     }
 }

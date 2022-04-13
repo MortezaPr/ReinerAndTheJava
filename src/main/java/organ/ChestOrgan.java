@@ -1,6 +1,9 @@
 package organ;
 
 import armor.ChestArmor;
+import org.json.simple.parser.ParseException;
+import config.ConfigLoader;
+import java.io.IOException;
 
 /**
  * chest's organ class
@@ -11,7 +14,7 @@ public class ChestOrgan extends Organ {
      *
      * @param hp hp of the organ
      */
-    private ChestOrgan(double hp) {
+    private ChestOrgan(double hp) throws IOException, ParseException {
         super(hp, ChestArmor.create());
     }
 
@@ -20,7 +23,7 @@ public class ChestOrgan extends Organ {
      *
      * @return chest's organ
      */
-    public static ChestOrgan create() {
-        return new ChestOrgan(210);
+    public static ChestOrgan create() throws IOException, ParseException {
+        return new ChestOrgan(ConfigLoader.getHP("chest"));
     }
 }

@@ -1,4 +1,8 @@
 package armor;
+import config.ConfigLoader;
+import org.json.simple.parser.ParseException;
+
+import java.io.IOException;
 
 /**
  * arm's armor class
@@ -19,7 +23,7 @@ public class ArmArmor extends Armor {
      *
      * @return arm's armor
      */
-    public static ArmArmor create() {
-        return new ArmArmor(75, 3.4);
+    public static ArmArmor create() throws IOException, ParseException {
+        return new ArmArmor(ConfigLoader.getDurability("arm"), ConfigLoader.getK("arm"));
     }
 }

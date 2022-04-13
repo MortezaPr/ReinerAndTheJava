@@ -1,4 +1,8 @@
 package armor;
+import config.ConfigLoader;
+import org.json.simple.parser.ParseException;
+
+import java.io.IOException;
 
 /**
  * neck's armor class
@@ -19,7 +23,7 @@ public class NeckArmor extends Armor {
      *
      * @return neck's armor
      */
-    public static NeckArmor create() {
-        return new NeckArmor(50, 2.1);
+    public static NeckArmor create() throws IOException, ParseException {
+        return new NeckArmor(ConfigLoader.getDurability("neck"), ConfigLoader.getK("neck"));
     }
 }

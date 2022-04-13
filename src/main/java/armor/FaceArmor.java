@@ -1,4 +1,8 @@
 package armor;
+import config.ConfigLoader;
+import org.json.simple.parser.ParseException;
+
+import java.io.IOException;
 
 /**
  * face's armor class
@@ -19,7 +23,7 @@ public class FaceArmor extends Armor {
      *
      * @return face's armor
      */
-    public static FaceArmor create() {
-        return new FaceArmor(60, 1.8);
+    public static FaceArmor create() throws IOException, ParseException {
+        return new FaceArmor(ConfigLoader.getDurability("face"), ConfigLoader.getK("face"));
     }
 }

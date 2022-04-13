@@ -1,6 +1,10 @@
 package organ;
 
 import armor.StomachArmor;
+import config.ConfigLoader;
+import org.json.simple.parser.ParseException;
+
+import java.io.IOException;
 
 /**
  * stomach's organ class
@@ -11,7 +15,7 @@ public class StomachOrgan extends Organ {
      *
      * @param hp hp of the organ
      */
-    private StomachOrgan(double hp) {
+    private StomachOrgan(double hp) throws IOException, ParseException {
         super(hp, StomachArmor.create());
     }
 
@@ -20,7 +24,7 @@ public class StomachOrgan extends Organ {
      *
      * @return stomach's organ
      */
-    public static StomachOrgan create() {
-        return new StomachOrgan(50);
+    public static StomachOrgan create() throws IOException, ParseException {
+        return new StomachOrgan(ConfigLoader.getHP("stomach"));
     }
 }

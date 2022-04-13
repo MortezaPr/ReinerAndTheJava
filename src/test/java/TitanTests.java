@@ -1,10 +1,16 @@
+import org.json.simple.parser.ParseException;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 import titans.ArmoredTitan;
 
+import java.io.IOException;
+
 public class TitanTests {
 
     ArmoredTitan titan = ArmoredTitan.create();
+
+    public TitanTests() throws IOException, ParseException {
+    }
 
     @Test
     void armsTests() {

@@ -1,4 +1,8 @@
 package armor;
+import config.ConfigLoader;
+import org.json.simple.parser.ParseException;
+
+import java.io.IOException;
 
 /**
  * leg's armor class
@@ -19,7 +23,7 @@ public class LegArmor extends Armor {
      *
      * @return leg's armor
      */
-    public static LegArmor create() {
-        return new LegArmor( 110, 12.0);
+    public static LegArmor create() throws IOException, ParseException {
+        return new LegArmor( ConfigLoader.getDurability("leg"), ConfigLoader.getK("leg"));
     }
 }

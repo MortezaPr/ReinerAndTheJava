@@ -1,6 +1,10 @@
 package organ;
 
 import armor.NeckArmor;
+import config.ConfigLoader;
+import org.json.simple.parser.ParseException;
+
+import java.io.IOException;
 
 /**
  * neck's organ class
@@ -11,7 +15,7 @@ public class NeckOrgan extends Organ {
      *
      * @param hp hp of the organ
      */
-    private NeckOrgan(double hp) {
+    private NeckOrgan(double hp) throws IOException, ParseException {
         super(hp, NeckArmor.create());
     }
 
@@ -20,7 +24,7 @@ public class NeckOrgan extends Organ {
      *
      * @return neck's organ
      */
-    public static NeckOrgan create() {
-        return new NeckOrgan(45);
+    public static NeckOrgan create() throws IOException, ParseException {
+        return new NeckOrgan(ConfigLoader.getHP("neck"));
     }
 }

@@ -1,6 +1,10 @@
 package organ;
 
 import armor.FootArmor;
+import config.ConfigLoader;
+import org.json.simple.parser.ParseException;
+
+import java.io.IOException;
 
 /**
  * foot's organ class
@@ -11,7 +15,7 @@ public class FootOrgan extends Organ{
      *
      * @param hp hp of the organ
      */
-    private FootOrgan(double hp) {
+    private FootOrgan(double hp) throws IOException, ParseException {
         super(hp, FootArmor.create());
     }
 
@@ -20,7 +24,7 @@ public class FootOrgan extends Organ{
      *
      * @return foot's organ
      */
-    public static FootOrgan create() {
-        return new FootOrgan(45);
+    public static FootOrgan create() throws IOException, ParseException {
+        return new FootOrgan(ConfigLoader.getHP("foot"));
     }
 }

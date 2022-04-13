@@ -1,4 +1,8 @@
 package armor;
+import config.ConfigLoader;
+import org.json.simple.parser.ParseException;
+
+import java.io.IOException;
 
 /**
  * chest's armor class
@@ -19,7 +23,7 @@ public class ChestArmor extends Armor {
      *
      * @return chest's armor
      */
-    public static ChestArmor create() {
-        return new ChestArmor(115, 12.2);
+    public static ChestArmor create() throws IOException, ParseException {
+        return new ChestArmor(ConfigLoader.getDurability("chest"), ConfigLoader.getK("chest"));
     }
 }

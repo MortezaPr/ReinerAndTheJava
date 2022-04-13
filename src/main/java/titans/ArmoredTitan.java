@@ -1,6 +1,9 @@
 package titans;
 
+import org.json.simple.parser.ParseException;
 import organ.*;
+
+import java.io.IOException;
 
 /**
  * armored titan's class
@@ -195,7 +198,7 @@ public class ArmoredTitan {
     /**
      * @return armored titan
      */
-    public static ArmoredTitan create() {
+    public static ArmoredTitan create() throws IOException, ParseException {
         return new ArmoredTitan(
                 FaceOrgan.create(),
                 NeckOrgan.create(),

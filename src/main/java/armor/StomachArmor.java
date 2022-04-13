@@ -1,4 +1,8 @@
 package armor;
+import config.ConfigLoader;
+import org.json.simple.parser.ParseException;
+
+import java.io.IOException;
 
 /**
  * stomach's armor class
@@ -19,7 +23,7 @@ public class StomachArmor extends Armor {
      *
      * @return stomach's armor
      */
-    public static StomachArmor create() {
-        return new StomachArmor(100, 11.2);
+    public static StomachArmor create() throws IOException, ParseException {
+        return new StomachArmor(ConfigLoader.getDurability("stomach"), ConfigLoader.getK("stomach"));
     }
 }

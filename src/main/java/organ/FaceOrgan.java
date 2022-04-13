@@ -1,6 +1,10 @@
 package organ;
 
 import armor.FaceArmor;
+import config.ConfigLoader;
+import org.json.simple.parser.ParseException;
+
+import java.io.IOException;
 
 /**
  * face's organ class
@@ -11,7 +15,7 @@ public class FaceOrgan extends Organ {
      *
      * @param hp hp of the organ
      */
-    private FaceOrgan(double hp) {
+    private FaceOrgan(double hp) throws IOException, ParseException {
         super(hp, FaceArmor.create());
     }
 
@@ -20,7 +24,7 @@ public class FaceOrgan extends Organ {
      *
      * @return face's organ
      */
-    public static FaceOrgan create() {
-        return new FaceOrgan(30);
+    public static FaceOrgan create() throws IOException, ParseException {
+        return new FaceOrgan(ConfigLoader.getHP("face"));
     }
 }

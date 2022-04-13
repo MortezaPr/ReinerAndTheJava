@@ -4,19 +4,18 @@ import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 import org.json.simple.JSONObject;
 
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 
 public class ConfigLoader {
 
     static JSONParser jsonParser = new JSONParser();
-    static FileReader reader;
+    static JSONObject obj;
 
     static {
         try {
-            reader = new FileReader("C:\\Users\\NS\\Desktop\\ReinerAndTheJava\\src\\main\\java\\config\\config.json");
-        } catch (FileNotFoundException e) {
+            obj = (JSONObject) jsonParser.parse(new FileReader("C:\\Users\\NS\\Desktop\\ReinerAndTheJava\\src\\main\\java\\config\\config.json"));
+        } catch (IOException | ParseException e) {
             e.printStackTrace();
         }
     }
@@ -52,10 +51,8 @@ public class ConfigLoader {
         return val;
     }
 
-    public static JSONObject parse() throws IOException, ParseException {
-        Object obj = jsonParser.parse(reader);
-        JSONObject jsObj = (JSONObject) obj;
-        JSONObject titansConfig = (JSONObject) jsObj.get("titansConfig");
+    public static JSONObject parse() {
+        JSONObject titansConfig = (JSONObject) obj.get("titansConfig");
         return (JSONObject) titansConfig.get("ArmoredTitan");
     }
 }
