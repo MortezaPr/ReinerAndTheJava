@@ -15,6 +15,11 @@ public class TitanTests {
     @Test
     void armsTests() {
 
+        // ConfigLoader Tests
+        assertEquals(80, titan.getLeftArmOrgan().getHp());
+        assertEquals(75, titan.getLeftArmOrgan().getArmor().getDurability());
+        assertEquals(3.4, titan.getLeftArmOrgan().getArmor().getK());
+
         // left arm tests
         assertFalse(titan.getLeftArmOrgan().takeDamage(60));
         assertEquals(42.5, titan.getLeftArmOrgan().getHp());
@@ -42,6 +47,11 @@ public class TitanTests {
     @Test
     void chestTests() {
 
+        // ConfigLoader Tests
+        assertEquals(210, titan.getChestOrgan().getHp());
+        assertEquals(115, titan.getChestOrgan().getArmor().getDurability());
+        assertEquals(12.2, titan.getChestOrgan().getArmor().getK());
+
         assertFalse(titan.getChestOrgan().takeDamage(85.85));
         assertEquals(173.51, titan.getChestOrgan().getHp());
         assertFalse(titan.getChestOrgan().getArmor().takeDamage(85.85));
@@ -66,6 +76,11 @@ public class TitanTests {
     @Test
     void faceTests() {
 
+        // ConfigLoader Tests
+        assertEquals(30, titan.getFaceOrgan().getHp());
+        assertEquals(60, titan.getFaceOrgan().getArmor().getDurability());
+        assertEquals(1.8, titan.getFaceOrgan().getArmor().getK());
+
         assertFalse(titan.getFaceOrgan().takeDamage(25.75));
         assertEquals(11.98, titan.getFaceOrgan().getHp());
         assertFalse(titan.getFaceOrgan().getArmor().takeDamage(25.75));
@@ -84,6 +99,11 @@ public class TitanTests {
 
     @Test
     void footsTests() {
+
+        // ConfigLoader Tests
+        assertEquals(45, titan.getLeftFootOrgan().getHp());
+        assertEquals(76.3, titan.getLeftFootOrgan().getArmor().getDurability());
+        assertEquals(8.2, titan.getLeftFootOrgan().getArmor().getK());
 
         // left foot tests
         assertFalse(titan.getLeftFootOrgan().takeDamage(40));
@@ -105,6 +125,11 @@ public class TitanTests {
 
     @Test
     void legsTests() {
+
+        // ConfigLoader Tests
+        assertEquals(55, titan.getLeftLegOrgan().getHp());
+        assertEquals(110, titan.getLeftLegOrgan().getArmor().getDurability());
+        assertEquals(12, titan.getLeftLegOrgan().getArmor().getK());
 
         // left leg tests
         assertFalse(titan.getLeftLegOrgan().takeDamage(32.425));
@@ -137,6 +162,11 @@ public class TitanTests {
     @Test
     void neckTests() {
 
+        // ConfigLoader Tests
+        assertEquals(45, titan.getNeckOrgan().getHp());
+        assertEquals(50, titan.getNeckOrgan().getArmor().getDurability());
+        assertEquals(2.1, titan.getNeckOrgan().getArmor().getK());
+
         assertFalse(titan.getNeckOrgan().takeDamage(50.50));
         assertEquals(7.13, titan.getNeckOrgan().getHp());
         assertFalse(titan.getNeckOrgan().getArmor().takeDamage(50.50));
@@ -150,6 +180,11 @@ public class TitanTests {
 
     @Test
     void stomachTests() {
+
+        // ConfigLoader Tests
+        assertEquals(50, titan.getStomachOrgan().getHp());
+        assertEquals(100, titan.getStomachOrgan().getArmor().getDurability());
+        assertEquals(11.2, titan.getStomachOrgan().getArmor().getK());
 
         assertFalse(titan.getStomachOrgan().takeDamage(80));
         assertEquals(10, titan.getStomachOrgan().getHp());
